@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: qtQHvl6xIcBthNloz/SZTyKmDYwls1C9rmKnVr7b+a8t8oPcaLrFtn92eTx4bkFxIvvg0wYYsEOamCpabMmgxw41H7fmRKjUdPywOj5q2JQ6UBy9ckg1wAUVyrBzcGDJPcAyH7z5DoLuspqlLrImOz3IqRYjkBguGMHFMD1yny6wU413DE96h29JpPygPwqp0ui57WqYx9+FbtfH9rUK8tg5c7PGvolOU0RPHHLaHlId8NSRSjbTSA9d9GUM8zf2rF/RQ01NFunsHbrQYDctk7keyKmx3d/rX9AQ3aytu+hpbjdr7dZDyvslaY+hPrOv827VpS004Pg+iZ1m4XujrrS4ThE6bS16TkG35wUyfWJxyH2lC+r0/HQfAPFSdYepXZkGvClTaN8w8NWvM1XLucQYyCvhScbZKydQ9NyAdqPt8dWaGznq6aOrZvVbxeXzNtEZgn6twsPR6LUy7RqMTXmYzpHHjo5zQr5enMlnr+2wIHdXZpdIe4oXOEsuKD/Wi430FY59SQs+U5elbejw1XukD8/GwFH80XlF2HRoOaOYmxAF5POYUxjwdAsvoCHaMU4hENflHam1QaoaY96UkX5/cu1QJswD0J/p2CD23qOuHfZHbyhe3xUzrA1KkGDvqAo6m8RcP8DwBg9hXFrEtO5VvX3jPjg9PGYJZGJClHo=
+  app: stormy-savannah-96931
+  on:
+    repo: cafreeman/peepchat-ui
