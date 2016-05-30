@@ -2,9 +2,12 @@
   onsubmit=attrs.onsubmit
   title="Register with Peepchat"
   buttonText="Register"
+  buttonDisabled=validations.messages.length
 }}
   <div class="row">
     {{x-input
+      value=model.email
+      errors=(v-get this 'model.email' 'messages')
       classNames="col s12"
       type="email"
       label="Username"
@@ -12,6 +15,8 @@
   </div>
   <div class="row">
     {{x-input
+      value=model.password
+      errors=(v-get this 'model.password' 'messages')
       classNames="col s12"
       type="password"
       label="Password"
@@ -19,6 +24,8 @@
   </div>
   <div class="row">
     {{x-input
+      value=model.passwordConfirmation
+      errors=(v-get this 'model.passwordConfirmation' 'messages')
       classNames="col s12"
       type="password"
       label="Confirm Password"

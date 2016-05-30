@@ -7,6 +7,6 @@ export default Ember.Component.extend({
   type: 'text',
 
   _errorMessages: computed('errors.[]', function() {
-    return (this.get('errors') || []).join('. ');
+    return (this.get('errors') || []).join(', ');
   })
 });
