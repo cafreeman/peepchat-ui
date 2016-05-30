@@ -12,6 +12,10 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    DS: {
+      host: 'http://localhost:4000',
+      namespace: 'api',
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -40,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://protected-garden-37267.herokuapp.com';
   }
 
   return ENV;
